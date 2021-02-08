@@ -4,14 +4,6 @@ Game::Game(){}
 
 Game::~Game(){}
 
-// int Game::getSize(){
-//     return size;
-// }
-
-// void Game::setSize(const int s){
-//     this->size = s;
-// }
-
 std::string Game::getName(){ 
     return name;
 }

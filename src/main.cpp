@@ -5,9 +5,11 @@
 #include <vector>
 
 std::vector<Game*>* getGames(){
+    // Create vector of pointers to games
     std::vector<Game*> *games = new std::vector<Game*>;
-    std::ifstream input("./data/video_games.csv");
 
+    // Open file
+    std::ifstream input("./data/video_games.csv");
     if(!input.is_open()) throw std::runtime_error("File can't be opened.");
 
     std::string line;
@@ -16,6 +18,7 @@ std::vector<Game*>* getGames(){
     if(input.is_open()){
         // Remove the first line;
         std::getline(input, line);
+
         while(std::getline(input, line, '\n')){
             std::stringstream ss(line);
             Game* tmp = new Game();
@@ -56,6 +59,7 @@ std::vector<Game*>* getGames(){
 
             tmp->setRating(piece[0]);
 
+            // Skip re-release
             getline(ss, piece, ',');
             getline(ss, piece, ',');
 
@@ -85,7 +89,7 @@ TEST_CASE( "Testing...", "[all]" ) {
     REQUIRE( g->getName() == "Chicken Hunter");
     REQUIRE( g->getReleaseYear() == 2008);
     double value = 0;
-    for(auto it=games->begin(); it!=games->end(); ++it){ // Vector of game pointers
+    for(auto it=games->begin(); it!=games->end(); ++it){
         value += (*it)->getSales();
     }
     REQUIRE( value > 574.3);
