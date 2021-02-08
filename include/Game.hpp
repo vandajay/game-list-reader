@@ -3,16 +3,26 @@
 
 #include <string>
 
-/** A class for reading game .csv file */
+/** 
+ * Game Class
+ * 
+ * A class for reading .csv file with list of games of games.
+ * 
+ * Columns (comma delimiter):
+ * Title, handheld, max players, multiplatform, online, genre,
+ * licensed, publisher, sequel, review, sales, price, console,
+ * rating, re-release, release year
+ * 
+ * Rows:
+ * Individual games
+*/
 
 class Game {
     public:
     Game();
     ~Game();
 
-    // int getSize();
-    // void setSize(int size);
-
+    // Get & Set functions
     std::string getName();
     void setName(std::string n);
 
@@ -31,9 +41,7 @@ class Game {
     int getReleaseYear();
     void setReleaseYear(int y);
 
-
     private:
-        // int size;
         std::string name;
         bool online;
         double sales;
