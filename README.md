@@ -1,4 +1,4 @@
-# CIS380 Game Design Assignment 1
+# CIS380 Assignment 1: C++ Intro
 
 An introduction to c++.
 
