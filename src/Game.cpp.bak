@@ -1,0 +1,33 @@
+#include "Game.hpp"
+
+Game::Game(){
+
+}
+
+Game::~Game(){
+    delete(Game);
+}
+
+std::string Game::getName(){
+    return name;
+}
+
+bool Game::getOnline(){
+    return online;
+}
+
+int Game::getSales(){
+    return sales;
+}
+
+std::string Game::getConsole(){
+    return console;
+}
+
+char Game::getRating(){
+    return rating;
+}
+
+int Game::getReleaseYear(){
+    return returnYear;
+}

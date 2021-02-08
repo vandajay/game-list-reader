@@ -4,26 +4,12 @@
 #include <iostream>
 #include <vector>
 
-std::vector<Game*>* getGames(){ // ! finish getGames() function. This is a function signature.
-    std::vector<Game*> *games = new std::<Game*>;
-    std::ifstream input("./data/video_games.csv");
-
-    if(!input.is_open()) throw std::runtime_error("File can't be opened.");
-
-    std::string line;
-    std::string piece;
-
-    if(!input.is_open()){
-        // Remove the first line;
-        std::getline(input, line);
-        while(std::getline(input, line, '\n')){
-            
-        }
-    }
+std::vector<Game*>* getGames(){
+    //COMPLETE ME
 }
 
 TEST_CASE( "Testing...", "[all]" ) {
-    std::vector<Game*> *games = getGames(); // ! finish getGames() function. Made a pointer because- 
+    std::vector<Game*> *games = getGames();
     REQUIRE( games->size() == 1114);
     Game* g = games->at(222);
     REQUIRE( g->getName() == "WWE SmackDown vs. Raw 2007" );
@@ -40,7 +26,7 @@ TEST_CASE( "Testing...", "[all]" ) {
     REQUIRE( g->getName() == "Chicken Hunter");
     REQUIRE( g->getReleaseYear() == 2008);
     double value = 0;
-    for(auto it=games->begin(); it!=games->end(); ++it){ // Vector of game pointers
+    for(auto it=games->begin(); it!=games->end(); ++it){
         value += (*it)->getSales();
     }
     REQUIRE( value > 574.3);
