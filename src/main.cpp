@@ -16,7 +16,7 @@ std::vector<Game*>* getGames(){
     std::string piece;
 
     if(input.is_open()){
-        // Remove the first line;
+        // Remove the first line
         std::getline(input, line);
 
         while(std::getline(input, line, '\n')){
